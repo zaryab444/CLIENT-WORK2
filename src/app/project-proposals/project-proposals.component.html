@@ -5,17 +5,17 @@
       </div>
       <div class="col-8 exp">
     <div class="center">
-      <form class="row g-3 needs-validation" novalidate>
+      <form [formGroup]="proposalForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
         <h2>Project Proposals</h2>
         <hr/>
         <div class="col-md-6">
           <label for="validationCustom01" class="form-label">Project Title </label>
-          <input type="text" class="form-control" id="validationCustom01" value=""  placeholder="Project Title" required>
+          <input type="text" class="form-control" id="validationCustom01" value=""  placeholder="Project Title" required  formControlName="projecttitle">
 
         </div>
         <div class="col-md-6">
           <label for="validationCustom02" class="form-label">Project name</label>
-          <input type="text" class="form-control" id="validationCustom02" value="" placeholder="Project Name" required>
+          <input type="text" class="form-control" id="validationCustom02" value="" placeholder="Project Name" required  formControlName="projectname">
 
         </div>
         <div class="col-md-12">
@@ -24,12 +24,12 @@
           class="form-control"
           rows="3"
           placeholder="Write your project description here"
-        ></textarea>
+          formControlName="projectdescription"></textarea>
         </div>
 
         <div class="col-md-12">
           <label>Team Members</label>
-          <select id="inputState" class="form-control">
+          <select id="inputState" class="form-control"  formControlName="teamnumber">
             <option selected>Choose...</option>
             <option>1</option>
             <option>2</option>
@@ -41,49 +41,49 @@
         <div class="form-row">
           <div class="form-group col-md-3">
               <label>Group Member 1</label>
-              <input type="text" class="form-control" placeholder="Name"/>
+              <input type="text" class="form-control" placeholder="Name"  formControlName="group1"/>
             </div>
             <div class="form-group col-md-3">
               <label>Group Member 2</label>
-              <input type="text" class="form-control" placeholder="Name"/>
+              <input type="text" class="form-control" placeholder="Name"  formControlName="group2"/>
             </div>
             <div class="form-group col-md-3">
               <label>Group Member 3</label>
-              <input type="text" class="form-control" placeholder="Name"/>
+              <input type="text" class="form-control" placeholder="Name" formControlName="group3"/>
             </div>
             <div class="form-group col-md-3">
               <label>Group Member 4</label>
-              <input type="text" class="form-control" placeholder="Name"/>
+              <input type="text" class="form-control" placeholder="Name"  formControlName="group4"/>
             </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-3">
             <label>CMS ID</label>
-            <input type="text" class="form-control" placeholder="Id"/>
+            <input type="text" class="form-control" placeholder="Id" formControlName="cms1"/>
           </div>
           <div class="form-group col-md-3">
             <label>CMS ID</label>
-            <input type="text" class="form-control" placeholder="Id"/>
+            <input type="text" class="form-control" placeholder="Id" formControlName="cms2"/>
           </div>
           <div class="form-group col-md-3">
             <label>CMS ID</label>
-            <input type="text" class="form-control" placeholder="Id"/>
+            <input type="text" class="form-control" placeholder="Id"  formControlName="cms3"/>
           </div>
           <div class="form-group col-md-3">
             <label>CMS ID</label>
-            <input type="text" class="form-control" placeholder="Id"/>
+            <input type="text" class="form-control" placeholder="Id" formControlName="cms4"/>
           </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">Supervisor Name</label>
-        <input type="text" class="form-control" placeholder="Name"/>
+        <input type="text" class="form-control" placeholder="Name" formControlName="supName"/>
       </div>
 
       <div class="form-group col-md-6">
           <label for="inputCity">Co-Supervisor Name</label>
-          <input type="text" class="form-control" placeholder="Name" />
+          <input type="text" class="form-control" placeholder="Name"  formControlName="cosupname"/>
         </div>
     </div>
 

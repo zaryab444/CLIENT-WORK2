@@ -8,6 +8,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectIdeasComponent } from './project-ideas/project-ideas.component';
 import { ProjectProposalsComponent } from './project-proposals/project-proposals.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +19,12 @@ import { ProjectProposalsComponent } from './project-proposals/project-proposals
     NavbarComponent,
     ProjectIdeasComponent,
     ProjectProposalsComponent,
-  
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
