@@ -1,0 +1,87 @@
+
+  <div class="row">
+      <div class="col">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-8 exp">
+        <form [formGroup]="proposalForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
+        <h2>Weekly Meetings</h2>
+        <hr/>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+
+            <label>Please select a date and time</label>
+            <input type="text"
+                   placeholder="Datepicker"
+                   class="form-control"
+                   bsDatepicker
+                   formControlName="date">
+                      <span *ngIf="!date.valid && (date.touched || userSubmitted)"
+            class="error-block">
+             Date and Time Required !
+            </span>
+          </div>
+
+          <div class="form-group col-md-6">
+            <timepicker [(ngModel)]="mytime"
+            formControlName="time">
+          </timepicker>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Supervisor Name</label>
+            <input type="text" class="form-control" placeholder="Name" formControlName="supname"/>
+            <span *ngIf="!supname.valid && (supname.touched || userSubmitted)"
+            class="error-block">
+              Please provide Group Supervisor Name!
+            </span>
+          </div>
+
+          <div class="form-group col-md-6">
+              <label for="inputCity">Co-Supervisor Name</label>
+              <input type="text" class="form-control" placeholder="Name"  formControlName="cosupname"/>
+              <span *ngIf="!cosupname.valid && (cosupname.touched || userSubmitted)"
+              class="error-block">
+                Please provide CO Supervisor Name!
+              </span>
+            </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Student Name</label>
+            <input type="text" class="form-control" placeholder="Name" formControlName="studname"/>
+            <span *ngIf="!studname.valid && (studname.touched || userSubmitted)"
+            class="error-block">
+              Please provide Your Name!
+            </span>
+          </div>
+
+          <div class="form-group col-md-6">
+              <label for="inputCity">Project Title</label>
+              <input type="text" class="form-control" placeholder="Name"  formControlName="projtitle"/>
+              <span *ngIf="!projtitle.valid && (projtitle.touched || userSubmitted)"
+              class="error-block">
+                Please provide Project Title!
+              </span>
+            </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit Request</button>
+        </div>
+        </form>
+      </div>
+    </div>
+
+
+

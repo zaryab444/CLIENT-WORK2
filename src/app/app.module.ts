@@ -8,7 +8,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectIdeasComponent } from './project-ideas/project-ideas.component';
 import { ProjectProposalsComponent } from './project-proposals/project-proposals.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InternalRequestComponent } from './internal-request/internal-request.component';
+import { WeeklyRequestComponent } from './weekly-request/weekly-request.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+
+
 
 
 @NgModule({
@@ -19,12 +27,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     ProjectIdeasComponent,
     ProjectProposalsComponent,
+    InternalRequestComponent,
+    WeeklyRequestComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TooltipModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule,
+    TimepickerModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

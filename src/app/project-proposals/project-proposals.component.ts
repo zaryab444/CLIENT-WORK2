@@ -31,12 +31,12 @@ export class ProjectProposalsComponent implements OnInit {
         teamnumber: new  FormControl("", [Validators.required]),
         group1: new FormControl("", [Validators.required]),
         group2: new FormControl("", [Validators.required]),
-        group3: new FormControl("", [Validators.required]),
-        group4: new  FormControl("", [Validators.required]),
+        group3: new FormControl(""),
+        group4: new  FormControl(""),
         cms1: new FormControl("", [Validators.required]),
         cms2: new FormControl("", [Validators.required]),
-        cms3: new FormControl("", [Validators.required]),
-        cms4: new FormControl("", [Validators.required]),
+        cms3: new FormControl(""),
+        cms4: new FormControl(""),
         supName: new  FormControl("", [Validators.required]),
         cosupname: new FormControl("", [Validators.required])
 

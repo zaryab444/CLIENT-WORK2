@@ -6,7 +6,7 @@
       <div class="col-8 exp">
     <div class="center">
       <form [formGroup]="proposalForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
-        <h2>Project Proposals</h2>
+        <h2>Internal FYP Request</h2>
         <hr/>
         <div class="col-md-6">
           <label for="validationCustom01" class="form-label">Project Title </label>
@@ -105,6 +105,42 @@
             <input type="text" class="form-control" placeholder="Id" formControlName="cms4"/>
           </div>
     </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+          <label>Email ID 1</label>
+          <input type="text" class="form-control" placeholder="email" formControlName="email1"/>
+          <span *ngIf="!email1.valid && (email1.touched|| userSubmitted)" class="error-block">
+            <span *ngIf="email1.hasError('required')">
+                Please provide email id
+            </span>
+            <span *ngIf="email1.hasError('email')">
+              Please provide valid email id
+            </span>
+          </span>
+
+        </div>
+        <div class="form-group col-md-3">
+          <label>Email ID 2</label>
+          <input type="text" class="form-control" placeholder="email" formControlName="email2"/>
+          <span *ngIf="!email2.valid && (email2.touched|| userSubmitted)" class="error-block">
+            <span *ngIf="email2.hasError('required')">
+                Please provide email id
+            </span>
+            <span *ngIf="email2.hasError('email')">
+              Please provide valid email id
+            </span>
+          </span>
+
+        </div>
+        <div class="form-group col-md-3">
+          <label>Email ID 3</label>
+          <input type="text" class="form-control" placeholder="email"  formControlName="email3"/>
+        </div>
+        <div class="form-group col-md-3">
+          <label>Email ID 4</label>
+          <input type="text" class="form-control" placeholder="email" formControlName="email4"/>
+        </div>
+  </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -137,7 +173,6 @@
 
 
   </div>
-
 
 
 
