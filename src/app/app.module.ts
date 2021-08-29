@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -15,6 +15,12 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { TestComponent } from './test/test-add/test.component';
+import { TestListComponent } from './test/test-list/test-list.component';
+import { TestDetailComponent } from './test/test-detail/test-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TestNavComponent } from './test/test-nav/test-nav.component';
+import { ProjectDetailComponent } from './project-ideas/project-detail/project-detail.component';
 
 
 
@@ -29,6 +35,11 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
     ProjectProposalsComponent,
     InternalRequestComponent,
     WeeklyRequestComponent,
+    TestComponent,
+    TestListComponent,
+    TestDetailComponent,
+    TestNavComponent,
+    ProjectDetailComponent,
 
   ],
   imports: [
@@ -39,9 +50,11 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
     TimepickerModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
