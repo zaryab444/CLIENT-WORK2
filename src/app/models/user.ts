@@ -1,4 +1,4 @@
-export interface Proposal{
+export interface Proposals{
   projecttitle :string;
   projectname:string;
   projectdescription:string;

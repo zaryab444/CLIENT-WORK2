@@ -10,16 +10,16 @@
         <hr/>
         <div class="col-md-6">
           <label for="validationCustom01" class="form-label">Project Title </label>
-          <input type="text" class="form-control" id="validationCustom01" value=""  placeholder="Project Title" required  formControlName="projecttitle">
-          <span *ngIf="!projecttitle.valid && (projecttitle.touched || userSubmitted)"
+          <input type="text" class="form-control" id="validationCustom01" value=""  placeholder="Project Title" required  formControlName="ProjTitle">
+          <span *ngIf="!ProjTitle.valid && (ProjTitle.touched || userSubmitted)"
           class="error-block">
             Please provide name!
           </span>
         </div>
         <div class="col-md-6">
           <label for="validationCustom02" class="form-label">Project name</label>
-          <input type="text" class="form-control" id="validationCustom02" value="" placeholder="Project Name" required  formControlName="projectname">
-          <span *ngIf="!projectname.valid && (projectname.touched || userSubmitted)"
+          <input type="text" class="form-control" id="validationCustom02" value="" placeholder="Project Name" required  formControlName="ProjName">
+          <span *ngIf="!ProjName.valid && (ProjName.touched || userSubmitted)"
           class="error-block">
             Please provide Project Name!
           </span>
@@ -30,8 +30,8 @@
           class="form-control"
           rows="3"
           placeholder="Write your project description here"
-          formControlName="projectdescription"></textarea>
-          <span *ngIf="!projectdescription.valid && (projectdescription.touched || userSubmitted)"
+          formControlName="ProjDesc"></textarea>
+          <span *ngIf="!ProjDesc.valid && (ProjDesc.touched || userSubmitted)"
           class="error-block">
             Please provide Project Description!
           </span>
@@ -39,8 +39,8 @@
 
         <div class="col-md-12">
           <label>Team Members</label>
-          <select id="inputState" class="form-control"  formControlName="teamnumber">
-            <span *ngIf="!teamnumber.valid && (teamnumber.touched || userSubmitted)"
+          <select id="inputState" class="form-control"  formControlName="TeamMember">
+            <span *ngIf="!TeamMember.valid && (TeamMember.touched || userSubmitted)"
             class="error-block">
               Please provide Team Number!
             </span>
@@ -56,61 +56,61 @@
         <div class="form-row">
           <div class="form-group col-md-3">
               <label>Group Member 1</label>
-              <input type="text" class="form-control" placeholder="Name"  formControlName="group1"/>
-              <span *ngIf="!group1.valid && (group1.touched || userSubmitted)"
+              <input type="text" class="form-control" placeholder="Name"  formControlName="GroupMem1"/>
+              <span *ngIf="!GroupMem1.valid && (GroupMem1.touched || userSubmitted)"
               class="error-block">
                 Please provide Group Member 1!
               </span>
             </div>
             <div class="form-group col-md-3">
               <label>Group Member 2</label>
-              <input type="text" class="form-control" placeholder="Name"  formControlName="group2"/>
-              <span *ngIf="!group2.valid && (group2.touched || userSubmitted)"
+              <input type="text" class="form-control" placeholder="Name"  formControlName="GroupMem2"/>
+              <span *ngIf="!GroupMem2.valid && (GroupMem2.touched || userSubmitted)"
               class="error-block">
                 Please provide Group Member 2!
               </span>
             </div>
             <div class="form-group col-md-3">
               <label>Group Member 3</label>
-              <input type="text" class="form-control" placeholder="Name" formControlName="group3"/>
+              <input type="text" class="form-control" placeholder="Name" formControlName="GroupMem3"/>
             </div>
             <div class="form-group col-md-3">
               <label>Group Member 4</label>
-              <input type="text" class="form-control" placeholder="Name"  formControlName="group4"/>
+              <input type="text" class="form-control" placeholder="Name"  formControlName="GroupMem4"/>
             </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-3">
             <label>CMS ID 1</label>
-            <input type="text" class="form-control" placeholder="Id" formControlName="cms1"/>
-            <span *ngIf="!cms1.valid && (cms1.touched || userSubmitted)"
+            <input type="text" class="form-control" placeholder="Id" formControlName="cmsId1"/>
+            <span *ngIf="!cmsId1.valid && (cmsId1.touched || userSubmitted)"
             class="error-block">
               Please provide Group CMS1!
             </span>
           </div>
           <div class="form-group col-md-3">
             <label>CMS ID 2</label>
-            <input type="text" class="form-control" placeholder="Id" formControlName="cms2"/>
-            <span *ngIf="!cms2.valid && (cms2.touched || userSubmitted)"
+            <input type="text" class="form-control" placeholder="Id" formControlName="cmsId2"/>
+            <span *ngIf="!cmsId2.valid && (cmsId2.touched || userSubmitted)"
             class="error-block">
               Please provide Group CMS2!
             </span>
           </div>
           <div class="form-group col-md-3">
             <label>CMS ID 3</label>
-            <input type="text" class="form-control" placeholder="Id"  formControlName="cms3"/>
+            <input type="text" class="form-control" placeholder="Id"  formControlName="cmsId3"/>
           </div>
           <div class="form-group col-md-3">
             <label>CMS ID 4</label>
-            <input type="text" class="form-control" placeholder="Id" formControlName="cms4"/>
+            <input type="text" class="form-control" placeholder="Id" formControlName="cmsId4"/>
           </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">Supervisor Name</label>
-        <input type="text" class="form-control" placeholder="Name" formControlName="supName"/>
-        <span *ngIf="!supName.valid && (supName.touched || userSubmitted)"
+        <input type="text" class="form-control" placeholder="Name" formControlName="SupName"/>
+        <span *ngIf="!SupName.valid && (SupName.touched || userSubmitted)"
         class="error-block">
           Please provide Group Supervisor Name!
         </span>
@@ -118,8 +118,8 @@
 
       <div class="form-group col-md-6">
           <label for="inputCity">Co-Supervisor Name</label>
-          <input type="text" class="form-control" placeholder="Name"  formControlName="cosupname"/>
-          <span *ngIf="!cosupname.valid && (cosupname.touched || userSubmitted)"
+          <input type="text" class="form-control" placeholder="Name"  formControlName="CoSupname"/>
+          <span *ngIf="!CoSupname.valid && (CoSupname.touched || userSubmitted)"
           class="error-block">
             Please provide CO Supervisor Name!
           </span>

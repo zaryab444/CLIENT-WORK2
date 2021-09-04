@@ -1,27 +1,41 @@
 import { Injectable } from '@angular/core';
-import {Proposal} from '../models/user';
-
+import { Proposal } from './Proposal';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectProposalService {
 
-  constructor() { }
+    // Node/Express API
+  REST_API: string = 'http://localhost:8000/api';
 
-  addUser(user : Proposal){
-    let users = [];
-  if(localStorage.getItem('Proposal')){
-  users =   JSON.parse(localStorage.getItem('Proposal') || '{}');
+  // Http Header
+  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
-  users = [user, ...users];
-  //already exist user and save multiple user in storage
+  constructor(private httpClient: HttpClient) { }
 
+  // Add
+  AddProposal(data: Proposal): Observable<any> {
+    let API_URL = `${this.REST_API}/add-prop`;
+    return this.httpClient.post(API_URL, data)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+  // Error
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Handle client error
+      errorMessage = error.error.message;
+    } else {
+      // Handle server error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
   }
 
-  else {
-    users = [user];
-    //if noo multiple user so assign new user array
-  }
-  localStorage.setItem('Proposal', JSON.stringify(users));
-  }
 }

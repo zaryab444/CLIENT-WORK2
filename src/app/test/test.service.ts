@@ -29,7 +29,7 @@ export class TestService {
 
   // Get all objects
   GetBooks() {
-    return this.httpClient.get(`${this.REST_API}`);
+    return this.httpClient.get(`${this.REST_API}/book`);
   }
 
   // Get single object
