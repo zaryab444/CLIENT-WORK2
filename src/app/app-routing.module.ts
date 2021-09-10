@@ -27,7 +27,9 @@ const routes: Routes = [
   {path:'ideas', component: ProjectIdeasComponent},
   {path:'proposals', component: ProjectProposalsComponent},
   {path:'internal', component: InternalRequestComponent},
-  {path:'detail/:id', component: ProjectDetailComponent},
+  // {path:'detail/:id', component: ProjectDetailComponent},
+
+  {path: 'view/:id', component: ProjectDetailComponent},
 
   // testing works
   {path:'weekly', component: WeeklyRequestComponent},
