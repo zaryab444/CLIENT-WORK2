@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Internal } from '../models/request';
 import { AlertifyService } from '../services/alertify.service';
+import { Internal } from './Internal';
 import { InternalRequestService } from './internal-request.service';
 
 @Component({
@@ -10,160 +10,136 @@ import { InternalRequestService } from './internal-request.service';
   styleUrls: ['./internal-request.component.scss']
 })
 export class InternalRequestComponent implements OnInit {
-  proposalForm: FormGroup;
+  internalForm: FormGroup;
   user: Internal;
   userSubmitted: boolean
 
 
-  constructor( private fb:FormBuilder, private proposalService: InternalRequestService, private alertifyService :AlertifyService) { }
+  constructor( private fb:FormBuilder, private internalService: InternalRequestService, private alertifyService :AlertifyService) { }
 
   ngOnInit(): void {
-    this.createProposalForm();
+    this.createInternalForm();
 
   }
 
-  createProposalForm(){
-    this.proposalForm =  this.fb.group(
+  createInternalForm(){
+    this.internalForm =  this.fb.group(
       {
-        projecttitle: new FormControl("", Validators.required),
-        projectname: new FormControl("", [Validators.required]),
-        projectdescription: new FormControl("", [Validators.required]),
-        teamnumber: new  FormControl("", [Validators.required]),
-        email1 : new FormControl("", [Validators.required , Validators.email]),
-        email2 : new FormControl("", [Validators.required, Validators.email]),
-        email3 : new FormControl(""),
-        email4 : new FormControl(""),
+        projectTitle: new FormControl("", Validators.required),
+        projectName: new FormControl("", [Validators.required]),
+        projectDescription: new FormControl("", [Validators.required]),
+        teamMembers: new  FormControl("", [Validators.required]),
+        groupMember1 : new FormControl("", [Validators.required ]),
+        groupMember2 : new FormControl("", [Validators.required]),
+        groupMember3 : new FormControl(""),
+        groupMember4 : new FormControl(""),
 
-        group1: new FormControl("", [Validators.required]),
-        group2: new FormControl("", [Validators.required]),
-        group3: new FormControl(""),
-        group4: new  FormControl(""),
-        cms1: new FormControl("", [Validators.required]),
-        cms2: new FormControl("", [Validators.required]),
-        cms3: new FormControl(""),
-        cms4: new FormControl(""),
-        supName: new  FormControl("", [Validators.required]),
-        cosupname: new FormControl("", [Validators.required])
+        cmsID1: new FormControl("", [Validators.required]),
+        cmsID2: new FormControl("", [Validators.required]),
+        cmsID3: new FormControl(""),
+        cmsID4: new  FormControl(""),
+        emailID1: new FormControl("", [Validators.required,Validators.email]),
+        emailID2: new FormControl("", [Validators.required, Validators.email]),
+        emailID3: new FormControl("", [Validators.email]),
+        emailID4: new FormControl("", [Validators.email]),
+        SupName: new  FormControl("", [Validators.required]),
+        CoSupName: new FormControl("", [Validators.required])
 
 
       });
   }
 
- //Getter methods for all form controls
- get projecttitle(){
-  return this.proposalForm.get('projecttitle') as FormControl;
-}
-
- get projectname(){
-   return this.proposalForm.get('projectname') as FormControl;
- }
-
- get projectdescription(){
-   return this.proposalForm.get('projectdescription') as FormControl;
-
- }
-
- get teamnumber(){
-   return this.proposalForm.get('teamnumber') as FormControl;
- }
-
- get email1(){
-  return this.proposalForm.get('email1') as FormControl;
-
- }
- get email2(){
-  return this.proposalForm.get('email2') as FormControl;
-
- }
- get email3(){
-  return this.proposalForm.get('email3') as FormControl;
-
- }
- get email4(){
-  return this.proposalForm.get('email4') as FormControl;
-
- }
-
- get group1(){
-   return this.proposalForm.get('group1') as FormControl
- }
-
- get group2(){
-  return this.proposalForm.get('group2') as FormControl;
-}
-
- get group3(){
-   return this.proposalForm.get('group3') as FormControl;
- }
-
- get group4(){
-   return this.proposalForm.get('group4') as FormControl;
-
- }
-
- get cms1(){
-   return this.proposalForm.get('cms1') as FormControl;
- }
-
- get cms2(){
-   return this.proposalForm.get('cms2') as FormControl
- }
-//
-get cms3(){
-return this.proposalForm.get('cms3') as FormControl;
-}
-
-get cms4(){
- return this.proposalForm.get('cms4') as FormControl;
-}
-
-get supName(){
- return this.proposalForm.get('supName') as FormControl;
-
-}
-
-get cosupname(){
- return this.proposalForm.get('cosupname') as FormControl;
-}
-
-
-onSubmit(){
-  console.log(this.proposalForm);
-  this.userSubmitted = true;
-
-  if(this.proposalForm.valid){
-  // this.user = Object.assign(this.user, this.registerationForm.value);
-  this.proposalService.addReq(this.userData());
-  this.proposalForm.reset();
-  this.userSubmitted = false;
- this.alertifyService.success('Successfully Submit');
-  } else{
-    this.alertifyService.error('Process Failed');
+  get projectTitle(){
+    return this.internalForm.get('projectTitle') as FormControl;
   }
-}
-userData(): Internal{
-  return this.user = {
 
-    projecttitle: this.projecttitle.value,
-    projectname:this.projectname.value,
-    projectdescription: this.projectdescription.value,
-    teamnumber: this.teamnumber.value,
-    email1:this.email1.value,
-    email2:this.email1.value,
-    email3:this.email1.value,
-    email4:this.email1.value,
-    group1: this.group1.value,
-    group2:this.group2.value,
-    group3: this.group3.value,
-    group4: this.group4.value,
-    cms1: this.cms1.value,
-    cms2:this.cms2.value,
-    cms3: this.cms3.value,
-    cms4: this.cms4.value,
-    supName: this.supName.value,
-    cosupname: this.cosupname.value
+  get projectName(){
+    return this.internalForm.get('projectName') as FormControl;
   }
+
+  get projectDescription(){
+    return this.internalForm.get('projectDescription') as FormControl;
+  }
+
+  get teamMembers(){
+    return this.internalForm.get('teamMembers') as FormControl;
+  }
+
+  get groupMember1(){
+    return this.internalForm.get('groupMember1') as FormControl;
+  }
+
+  get groupMember2(){
+    return this.internalForm.get('groupMember2') as FormControl;
+  }
+
+  get groupMember3(){
+    return this.internalForm.get('groupMember3') as FormControl;
+  }
+
+  get groupMember4(){
+    return this.internalForm.get('groupMember4') as FormControl;
+  }
+
+  get cmsID1(){
+    return this.internalForm.get('cmsID1') as FormControl;
+  }
+
+  get cmsID2(){
+    return this.internalForm.get('cmsID2') as FormControl;
+  }
+
+  get cmsID3(){
+    return this.internalForm.get('cmsID3') as FormControl;
+  }
+
+  get cmsID4(){
+    return this.internalForm.get('cmsID4') as FormControl;
+  }
+
+  get emailID1(){
+    return this.internalForm.get('emailID1') as FormControl;
+  }
+
+  get emailID2(){
+    return this.internalForm.get('emailID2') as FormControl;
+  }
+
+  get emailID3(){
+    return this.internalForm.get('emailID3') as FormControl;
+  }
+
+  get emailID4(){
+    return this.internalForm.get('emailID4') as FormControl;
+  }
+
+  get SupName(){
+    return this.internalForm.get('SupName') as FormControl;
+  }
+  get CoSupName(){
+    return this.internalForm.get('CoSupName') as FormControl;
+  }
+
+
+
+
+onSubmit(): any {
+  this.internalService.AddRequest(this.internalForm.value)
+  .subscribe(() => {
+      console.log('Data added successfully!')
+      this.internalForm.reset();
+      this.userSubmitted = false;
+      this.alertifyService.success('Successfully Submit');
+    }, (err) => {
+      console.log(err);
+  });
 }
+
+
+
+
+
+
 
 
 }

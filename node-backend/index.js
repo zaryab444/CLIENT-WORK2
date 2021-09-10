@@ -18,8 +18,10 @@ mongoose.connect(mongoDb.db, {
   }
 )
 
-const bookRoute = require('./routes/book.routes')
-const proposalRoute  = require('./routes/proposal.routes')
+const bookRoute = require('./routes/book.routes');
+const internalRoute = require('./routes/internal.routes');
+const proposalRoute  = require('./routes/proposal.routes');
+const weeklyRoute = require('./routes/weekly.routes');
 
 const app = express();
 app.use(bodyParser.json());
@@ -36,6 +38,10 @@ app.use(express.static(path.join(__dirname, 'dist/angular-mean-crud-tutorial')))
 app.use('/api', bookRoute)
 
 app.use('/api',proposalRoute)
+
+app.use('/api', internalRoute)
+
+app.use('/api', weeklyRoute)
 
 // PORT
 const port = process.env.PORT || 8000;

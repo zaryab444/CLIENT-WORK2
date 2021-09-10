@@ -19,6 +19,7 @@ proposalRoute.route('/add-prop').post((req,res,next)=>{
 });
 
 //Get All Proposal
+//http://localhost:8000/api/prop
 proposalRoute.route('/prop').get((req, res) => {
   Proposal.find((error, data) => {
   if (error) {
@@ -31,6 +32,7 @@ proposalRoute.route('/prop').get((req, res) => {
 
 
 // Delete Proposal
+//http://localhost:8000/api/delete-prop/:id
 proposalRoute.route('/delete-prop/:id').delete((req, res, next) => {
   Proposal.findByIdAndRemove(req.params.id, (error, data) => {
   if (error) {
