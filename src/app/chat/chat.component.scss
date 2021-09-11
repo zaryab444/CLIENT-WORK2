@@ -5,8 +5,29 @@
 
 .msg{
 margin-top: 450px;
+
 }
 
 .background{
   background-color: #DCDCDC;
+  border: 2px #DCDCDC;
+  padding: 10px;
+  border-radius: 50px 20px;
+}
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: -23px;
+  padding-top: 4px;
+
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
 }
