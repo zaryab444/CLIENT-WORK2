@@ -21,6 +21,7 @@ import { TestDetailComponent } from './test/test-detail/test-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TestNavComponent } from './test/test-nav/test-nav.component';
 import { ProjectDetailComponent } from './project-ideas/project-detail/project-detail.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -40,6 +41,7 @@ import { ProjectDetailComponent } from './project-ideas/project-detail/project-d
     TestDetailComponent,
     TestNavComponent,
     ProjectDetailComponent,
+    ChatComponent,
 
   ],
   imports: [

@@ -1,0 +1,32 @@
+
+  <div class="row">
+    <div class="col">
+      <app-sidebar></app-sidebar>
+    </div>
+
+
+
+
+    <div class="col-8 exp">
+      <!-- chat data here -->
+<p class="background" *ngFor="let idea of Sends; let i = index">
+{{idea.sender}}
+</p>
+
+      <form [formGroup]="chatForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
+      <div class="row">
+      <div class="col-md-10">
+
+        <input type="text" class="form-control msg" placeholder="Type here" formControlName="sender"/>
+
+      </div>
+      <div class="col-md-2">
+        <button [disabled]="chatForm.invalid" class="btn btn-primary msg" type="submit">Submit form</button>
+      </div>
+    </div>
+  </form>
+    </div>
+  </div>
+
+
+

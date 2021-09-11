@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatComponent } from './chat/chat.component';
 import { HomeComponent } from './home/home.component';
 import { InternalRequestComponent } from './internal-request/internal-request.component';
 import { LoginformComponent } from './loginform/loginform.component';
@@ -28,7 +29,7 @@ const routes: Routes = [
   {path:'proposals', component: ProjectProposalsComponent},
   {path:'internal', component: InternalRequestComponent},
   // {path:'detail/:id', component: ProjectDetailComponent},
-
+ {path: 'chat', component: ChatComponent},
   {path: 'view/:id', component: ProjectDetailComponent},
 
   // testing works

@@ -23,6 +23,7 @@ const internalRoute = require('./routes/internal.routes');
 const proposalRoute  = require('./routes/proposal.routes');
 const weeklyRoute = require('./routes/weekly.routes');
 const ideasRoute = require ('./routes/ideas.routes.js');
+const chatroute = require('./routes/chat.routes');
 
 const app = express();
 app.use(bodyParser.json());
@@ -45,6 +46,7 @@ app.use('/api', internalRoute)
 app.use('/api', weeklyRoute)
 
 app.use('/api',ideasRoute)
+app.use('/api',chatroute)
 
 // PORT
 const port = process.env.PORT || 8000;
