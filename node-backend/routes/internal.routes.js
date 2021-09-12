@@ -8,7 +8,7 @@ let Internal = require('../model/Internal');
 
 
 //Add Internal Request
-
+//http://localhost:8000/api/add-internal
 internalRoute.route('/add-internal').post((req,res,next)=>{
   Internal.create(req.body,(error,data)=>{
     if(error){
@@ -21,6 +21,7 @@ internalRoute.route('/add-internal').post((req,res,next)=>{
 });
 
 //Get All Internal Request
+//http://localhost:8000/api/internal
 internalRoute.route('/internal').get((req, res) => {
   Internal.find((error, data) => {
   if (error) {

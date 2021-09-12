@@ -6,6 +6,7 @@ let Ideas = require('../model/Ideas');
 
 
 //Add Ideas Request
+//http://localhost:8000/api/add-Ideas
 
 ideasRoute.route('/add-Ideas').post((req,res,next)=>{
   Ideas.create(req.body,(error,data)=>{
@@ -19,6 +20,7 @@ ideasRoute.route('/add-Ideas').post((req,res,next)=>{
 });
 
 //Get All Ideas Request
+//http://localhost:8000/api/ideas
 ideasRoute.route('/ideas').get((req, res) => {
   Ideas.find((error, data) => {
   if (error) {
@@ -29,7 +31,8 @@ ideasRoute.route('/ideas').get((req, res) => {
 })
 })
 
-// Get Idea
+// Get Idea By Id
+//http://localhost:8000/api/read-ideas/:id
 ideasRoute.route('/read-ideas/:id').get((req, res) => {
   const id = req.params.id;
   Ideas.findById(id,function(err,   customerResponse){
@@ -40,23 +43,7 @@ ideasRoute.route('/read-ideas/:id').get((req, res) => {
     else{
       res.send({status: 200, results: customerResponse});
     }
-  // Ideas.findById(req.params.id, (error, data) => {
-  // if (error) {
-  //   //return next(error)
-  //   res.send({status: 500, message:'Unable to Find customer'});
-  // } else {
-  // //  res.json(data)
-  // res.send({status: 200, results: customerResponse});
-  // }
 
-
-  // if(err){
-  //   res.send({status: 500, message:'Unable to Find customer'});
-
-  // }
-  // else{
-  //   res.send({status: 200, results: customerResponse});
-  // }
 })
 })
 

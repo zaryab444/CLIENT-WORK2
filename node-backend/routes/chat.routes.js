@@ -7,6 +7,7 @@ let Chat = require('../model/Chat');
 
 
 // Send Chat
+//http://localhost:8000/api/send
 chatroute.route('/send').post((req, res, next) => {
   Chat.create(req.body, (error, data) => {
   if (error) {
@@ -18,6 +19,7 @@ chatroute.route('/send').post((req, res, next) => {
 });
 
 // Get All Chat
+//http://localhost:8000/api/allsend
 chatroute.route('/allsend').get((req, res) => {
   Chat.find((error, data) => {
   if (error) {
@@ -28,6 +30,7 @@ chatroute.route('/allsend').get((req, res) => {
 })
 })
 
+//http://localhost:8000/api/delete/:id
 chatroute.route('/delete/:id').delete((req, res, next) => {
   Chat.findByIdAndRemove(req.params.id, (error, data) => {
   if (error) {

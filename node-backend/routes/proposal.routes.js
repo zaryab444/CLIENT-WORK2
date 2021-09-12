@@ -6,7 +6,7 @@ const proposalRoute = express.Router();
 let Proposal = require('../model/Proposal');
 
 //Add Proposal
-
+//http://localhost:8000/api/add-prop
 proposalRoute.route('/add-prop').post((req,res,next)=>{
   Proposal.create(req.body,(error,data)=>{
     if(error){

@@ -6,6 +6,8 @@ let Weekly = require('../model/Weekly');
 
 //Add Proposal
 
+//http://localhost:8000/api/add-week
+
 weeklyRoute.route('/add-week').post((req,res,next)=>{
   Weekly.create(req.body,(error,data)=>{
     if(error){

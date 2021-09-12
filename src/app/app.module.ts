@@ -15,11 +15,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-import { TestComponent } from './test/test-add/test.component';
-import { TestListComponent } from './test/test-list/test-list.component';
-import { TestDetailComponent } from './test/test-detail/test-detail.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TestNavComponent } from './test/test-nav/test-nav.component';
 import { ProjectDetailComponent } from './project-ideas/project-detail/project-detail.component';
 import { ChatComponent } from './chat/chat.component';
 
@@ -36,10 +32,6 @@ import { ChatComponent } from './chat/chat.component';
     ProjectProposalsComponent,
     InternalRequestComponent,
     WeeklyRequestComponent,
-    TestComponent,
-    TestListComponent,
-    TestDetailComponent,
-    TestNavComponent,
     ProjectDetailComponent,
     ChatComponent,
 

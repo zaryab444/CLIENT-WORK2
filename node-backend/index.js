@@ -17,8 +17,6 @@ mongoose.connect(mongoDb.db, {
     console.log('Database error: ' + error)
   }
 )
-
-const bookRoute = require('./routes/book.routes');
 const internalRoute = require('./routes/internal.routes');
 const proposalRoute  = require('./routes/proposal.routes');
 const weeklyRoute = require('./routes/weekly.routes');
@@ -37,7 +35,6 @@ app.use(express.static(path.join(__dirname, 'dist/angular-mean-crud-tutorial')))
 
 
 // API root
-app.use('/api', bookRoute)
 
 app.use('/api',proposalRoute)
 
