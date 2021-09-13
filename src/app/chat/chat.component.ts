@@ -22,6 +22,7 @@ export class ChatComponent implements OnInit {
     this.sendChat();
     this.chatservice.GetChats().subscribe(res => {
       console.log(res)
+      console.log('check response')
       this. Sends=res;
     });
   }
